@@ -6,64 +6,39 @@
     cursor: pointer;
     transition: background-color 0.2s ease, opacity 0.2s ease;
     text-decoration: none;
-    /* щоб Link виглядав як кнопка */
     display: inline-block;
     text-align: center;
 }
 
-/* Primary */
 .primary {
-    background-color: #3470ff;
+    background-color: #3470FF;
     color: #fff;
 }
 
 .primary:hover:not(.disabled) {
-    background-color: #2456c7;
+    background-color: #0B44CD;
 }
 
-/* Secondary */
-.secondary {
-    background-color: #e5e7eb;
-    color: #111827;
-}
 
-.secondary:hover:not(.disabled) {
-    background-color: #d1d5db;
-}
-
-/* Danger (наприклад для видалення) */
-.danger {
-    background-color: #dc3545;
-    color: #fff;
-}
-
-.danger:hover:not(.disabled) {
-    background-color: #a71d2a;
-}
-
-/* Disabled */
 .disabled {
     opacity: 0.6;
     cursor: not-allowed;
 }
 
-/* Прозора кнопка для Load More */
 .transparent {
     background-color: transparent;
-    color: #3470ff;
-    border: 1px solid #3470ff;
+    color: #0B44CD;
+    border: 1px solid #3470FF;
     margin: 20px auto 0;
     color: black;
-    /* центрування */
     display: block;
 }
 
-.transparent:hover:not(.disabled) {
-    background-color: #3470ff;
-    color: #fff;
+.transparent:hover {
+    border: 1px solid #0B44CD;
+    color: black;
 }
 
-.transparent:active:not(.disabled) {
-    background-color: #2456c7;
-    /* темно-синій при кліку */
+.transparent:active {
+    background-color: #0B44CD;
 }

@@ -1,49 +1,162 @@
 .card {
     position: relative;
-    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
     overflow: hidden;
-        /* щоб кути картинки і сердечка збігалися */
-        display: flex;
-        flex-direction: column;
+    /* щоб фото та сердечко лягали всередину */
+    background: #fff;
+    
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    height: 424px;
 }
 
+.image {
+    width: 100%;
+    height: 260px;
+    /* підлаштуй за потреби */
+    object-fit: cover;
+    display: block;
+}
 
-    .image {
-            width: 100%;
-            display: block;
-        }
-
-
+/* Кнопка-лайк */
 .favorite {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    display: grid;
+    place-items: center;
     cursor: pointer;
 }
 
 .heartOutline,
 .heartFilled {
-    font-size: 24px;
-    transition: color 0.2s ease;
+    font-size: 22px;
+    transition: transform .15s ease;
+}
+
+.favorite:hover .heartOutline,
+.favorite:hover .heartFilled {
+    transform: scale(1.05);
 }
 
 .heartOutline {
-    color: #999;
+    color: #111;
 }
 
 .heartFilled {
     color: #3470FF;
-    /* синій, як у ТЗ */
 }
 
-.button {
+/* Текстова частина */
+.body {
+    
+   
+    display: flex;
+        /* додаємо флекс */
+        flex-direction: column;
+        /* вертикально */
+        flex: 1;
+        /* розтягуємось на всю висоту */
+}
+
+.headerRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 16px;
+    line-height: 1.2;
+    margin: 0;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.modelLink {
+    color: #3470FF;
     text-decoration: none;
-    color: white;
-    background: #3470FF;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
+}
+
+.modelLink:hover {
+    text-decoration: underline;
+}
+
+.year {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+/* Рядки з метаданими */
+.metaRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #9ca3af;
+    /* сірий */
+    font-size: 12px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+   
+}
+
+.metaItem {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.separator {
+    width: 1px;
+    height: 12px;
+    background: #d1d5db;
+}
+
+/* Кнопка Read more — велика капсула */
+.cta {
     margin-top: auto;
-    display: inline-block;
+    
     text-align: center;
+    text-decoration: none;
+    background: #3470FF;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 20px;
+    border-radius: 20px;
+}
+
+/* Адаптивність */
+@media (max-width: 480px) {
+    .image {
+        height: 220px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .cta {
+        font-size: 14px;
+        padding: 14px 18px;
+    }
 }

@@ -1,12 +1,43 @@
-# React + Vite
+🚗 RentalCar App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📌 Опис проєкту
+RentalCar — це веб-додаток для пошуку та бронювання автомобілів в оренду.
+Користувачі можуть переглядати каталог авто, фільтрувати їх за брендом, ціною та пробігом, переглядати детальну інформацію про кожне авто та залишати заявку на бронювання.
 
-Currently, two official plugins are available:
+✨ Основні функції
+Перегляд каталогу автомобілів з посторінковим завантаженням.
+Фільтрація авто за брендом, ціною та пробігом (фільтрація виконується на бекенді).
+Перегляд детальної інформації про авто (рік, пробіг, двигун, умови оренди, аксесуари тощо).
+Форма бронювання з валідацією.
+Сучасний інтерфейс із використанням React, Redux Toolkit та CSS Modules.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠 Використані технології
+React 18
+Redux Toolkit для управління станом
+React Router для маршрутизації
+Axios для запитів до API
+CSS Modules для стилізації
+Vite для швидкої збірки
 
-## Expanding the ESLint configuration
+🚀 Встановлення та запуск
+Клонувати репозиторій:
+git clone git@github.com:OlehDee/rentalcars.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Перейти у папку проєкту:
+cd rentalcar-app
+
+Встановити залежності:
+npm install
+
+Запустити локальний сервер:
+npm run dev
+
+📖 Використання
+Відкрити http://localhost:5173 у браузері.
+Використати фільтри у каталозі для пошуку потрібного авто.
+Переглянути детальну інформацію натиснувши "Read More".
+Заповнити форму бронювання для відправки заявки.
+
+👨‍💻 Автор
+Проєкт розробив: Олег Денисенко
+📧 Email: Oleh.Denysenkoo@gmail.com

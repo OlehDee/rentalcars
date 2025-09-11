@@ -1,6 +1,8 @@
 .home {
     height: 100vh;
     /* повна висота екрану */
+    position: relative;
+        /* щоб позиціонувати дочірній блок */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,8 +19,16 @@
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
+.content {
+    position: absolute;
+    bottom: 60px;
+    /* 60px від низу */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
 .title {
-    font: 700 60px / 120% var(--font-family);
+    font-size:60px;
         text-align: center;
         color: var(--white);
 }
