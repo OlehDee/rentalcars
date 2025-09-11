@@ -6,5 +6,7 @@ export const selectBrands = (state) => state.vehicles.brands;
 export const selectCurrentCar = (state) => state.vehicles.currentCar;
 export const selectIsLoading = (state) => state.vehicles.isLoading;
 export const selectError = (state) => state.vehicles.error;
-// src/features/favorites/selectors.js
 export const selectFavorites = (state) => state.favorites.items;
+export const selectIsFavorite = (id) => (state) =>
+  state.favorites.items.some(c => c.id === id);
+

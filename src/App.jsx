@@ -1,19 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
-import Catalog from './pages/Catalog';
-import VehicleDetails from './pages/VehicleDetails';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages//Home/Home';
+import Catalog from './pages/Catalog/Catalog';
+import VehicleDetails from './pages/VehicleDetails/VehicleDetails';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <Router>
-      <header style={{ padding: '10px 20px', backgroundColor: '#f5f5f5', display: 'flex', gap: '20px' }}>
-        <Link to="/" style={{ textDecoration: 'none' }}>Home</Link>
-        <Link to="/catalog" style={{ textDecoration: 'none' }}>Catalog</Link>
-      </header>
+      <Header />
 
-      <main style={{ padding: '20px' }}>
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />

@@ -1,0 +1,49 @@
+.card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+        /* щоб кути картинки і сердечка збігалися */
+        display: flex;
+        flex-direction: column;
+}
+
+
+    .image {
+            width: 100%;
+            display: block;
+        }
+
+
+.favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.heartOutline,
+.heartFilled {
+    font-size: 24px;
+    transition: color 0.2s ease;
+}
+
+.heartOutline {
+    color: #999;
+}
+
+.heartFilled {
+    color: #3470FF;
+    /* синій, як у ТЗ */
+}
+
+.button {
+    text-decoration: none;
+    color: white;
+    background: #3470FF;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+}

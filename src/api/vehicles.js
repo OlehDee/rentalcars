@@ -1,27 +1,36 @@
+// src/api/vehicles.js
 import api from './axios';
 
-/**
- * Отримати список авто з фільтрами
- * @param {Object} params - параметри запиту
- * @param {string} [params.brand] - фільтр по бренду
- * @param {number} [params.price] - макс. ціна оренди
- * @param {number} [params.mileage_from] - пробіг від
- * @param {number} [params.mileage_to] - пробіг до
- * @param {number} [params.page=1] - сторінка
- * @param {number} [params.limit=12] - кількість на сторінку
- */
-export const fetchVehiclesAPI = (params) => {
-  return api.get('/cars', { params });
+// Нормалізуємо параметри згідно зі Swagger:
+// brand, rentalPrice (string), minMileage, maxMileage, page, limit
+const normalizeParams = (params = {}) => {
+  const {
+    brand = '',
+    rentalPrice = '',
+    minMileage = '',
+    maxMileage = '',
+    page = 1,
+    limit = 12,
+  } = params;
+
+  return {
+    ...(brand ? { brand } : {}),
+    ...(rentalPrice !== '' ? { rentalPrice: String(rentalPrice) } : {}),
+    ...(minMileage !== '' ? { minMileage: Number(minMileage) } : {}),
+    ...(maxMileage !== '' ? { maxMileage: Number(maxMileage) } : {}),
+    page: Number(page) || 1,
+    limit: Number(limit) || 12,
+  };
 };
 
-/**
- * Отримати авто за ID
- * @param {string|number} id - ідентифікатор авто
- */
-export const fetchVehicleByIdAPI = (id) => {
-  return api.get(`/cars/${id}`);
-};
+// Отримати список авто з бекенду з урахуванням фільтрів
+export const fetchVehiclesAPI = (params) =>
+  api.get('/cars', { params: normalizeParams(params) });
 
-export const fetchBrandsAPI = () => {
-  return api.get('/brands');
-};
+// Отримати авто за ID
+export const fetchVehicleByIdAPI = (id) =>
+  api.get(`/cars/${id}`);
+
+// Отримати список брендів
+export const fetchBrandsAPI = () =>
+  api.get('/brands');

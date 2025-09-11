@@ -1,0 +1,25 @@
+.banner {
+    background-image: url('../images/Picture.png');
+    /* шлях відносно цього файлу */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.title {
+    font-size: 48px;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-top: 10px;
+}

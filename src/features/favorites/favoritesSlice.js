@@ -1,26 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  items: JSON.parse(localStorage.getItem('favorites')) || [],
+const load = () => {
+  try { return JSON.parse(localStorage.getItem('favorites')) || []; }
+  catch { return []; }
 };
+const save = (items) => localStorage.setItem('favorites', JSON.stringify(items));
+
+const initialState = { items: load() };
 
 const favoritesSlice = createSlice({
   name: 'favorites',
   initialState,
   reducers: {
-    addFavorite: (state, action) => {
-      const exists = state.items.find((car) => car.id === action.payload.id);
-      if (!exists) {
-        state.items.push(action.payload);
-        localStorage.setItem('favorites', JSON.stringify(state.items));
+    addFavorite: (state, { payload }) => {
+      if (!state.items.some(c => c.id === payload.id)) {
+        state.items.push(payload);
+        save(state.items);
       }
     },
-    removeFavorite: (state, action) => {
-      state.items = state.items.filter((car) => car.id !== action.payload);
-      localStorage.setItem('favorites', JSON.stringify(state.items));
+    removeFavorite: (state, { payload: id }) => {
+      state.items = state.items.filter(c => c.id !== id);
+      save(state.items);
+    },
+    toggleFavorite: (state, { payload }) => {
+      const exists = state.items.some(c => c.id === payload.id);
+      state.items = exists
+        ? state.items.filter(c => c.id !== payload.id)
+        : [...state.items, payload];
+      save(state.items);
     },
   },
 });
 
-export const { addFavorite, removeFavorite } = favoritesSlice.actions;
+export const { addFavorite, removeFavorite, toggleFavorite } = favoritesSlice.actions;
 export const favoritesReducer = favoritesSlice.reducer;
