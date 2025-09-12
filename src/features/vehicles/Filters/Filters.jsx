@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styles from './Filters.module.css';
 import Button from '../../../components/Button/Button';
@@ -6,8 +5,6 @@ import Button from '../../../components/Button/Button';
 export default function Filters({ brands, filters, onChange }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // minMileage та maxMileage конвертуємо у числа, решта лишаються рядками
     const numericFields = ['minMileage', 'maxMileage'];
     const next = {
       ...filters,
@@ -15,7 +12,6 @@ export default function Filters({ brands, filters, onChange }) {
         ? (value === '' ? '' : Number(value))
         : value,
     };
-
     onChange(next);
   };
 
@@ -26,58 +22,75 @@ export default function Filters({ brands, filters, onChange }) {
   return (
     <div className={styles.filters}>
       {/* Brand */}
-      <select
-        name="brand"
-        value={filters.brand}
-        onChange={handleChange}
-        className={styles.select}
-      >
-        <option value="">All Brands</option>
-        {brands.map((brand) => (
-          <option key={brand} value={brand}>{brand}</option>
-        ))}
-      </select>
+      <div className={styles.group}>
+        <label className={styles.label}>Car brand</label>
+        <div className={styles.selectWrap}>
+          <select
+            name="brand"
+            value={filters.brand}
+            onChange={handleChange}
+            className={styles.select}
+          >
+            <option value="">All Brands</option>
+            {brands.map((brand) => (
+              <option key={brand} value={brand}>
+                {brand}
+              </option>
+            ))}
+          </select>
+          <span className={styles.caret} />
+        </div>
+      </div>
 
-      {/* Rental Price */}
-      <select
-        name="rentalPrice"
-        value={filters.rentalPrice}
-        onChange={handleChange}
-        className={styles.select}
-      >
-        <option value="">Any Price</option>
-        <option value="30">30 $ / hour</option>
-        <option value="40">40 $ / hour</option>
-        <option value="50">50 $ / hour</option>
-        <option value="60">60 $ / hour</option>
-        <option value="70">70 $ / hour</option>
-        <option value="80">80 $ / hour</option>
-      </select>
+      {/* Price */}
+      <div className={styles.group}>
+        <label className={styles.label}>Price / hour</label>
+        <div className={styles.selectWrap}>
+          <select
+            name="rentalPrice"
+            value={filters.rentalPrice}
+            onChange={handleChange}
+            className={styles.select}
+          >
+            <option value="">Any Price</option>
+            {[30, 40, 50, 60, 70, 80].map((p) => (
+              <option key={p} value={p}>{p} $ / hour</option>
+            ))}
+          </select>
+          <span className={styles.caret} />
+        </div>
+      </div>
 
-      {/* Mileage from */}
-      <input
-        type="number"
-        name="minMileage"
-        placeholder="Mileage from"
-        value={filters.minMileage}
-        onChange={handleChange}
-        className={styles.input}
-        min="0"
-      />
+      {/* Mileage */}
+      <div className={styles.group}>
+        <label className={styles.label}>Mileage (km)</label>
+        <div className={styles.range}>
+          <input
+            type="number"
+            name="minMileage"
+            placeholder="From"
+            value={filters.minMileage}
+            onChange={handleChange}
+            className={styles.rangeInput}
+            min="0"
+          />
+          <span className={styles.divider}>|</span>
+          <input
+            type="number"
+            name="maxMileage"
+            placeholder="To"
+            value={filters.maxMileage}
+            onChange={handleChange}
+            className={styles.rangeInput}
+            min="0"
+          />
+        </div>
+      </div>
 
-      {/* Mileage to */}
-      <input
-        type="number"
-        name="maxMileage"
-        placeholder="Mileage to"
-        value={filters.maxMileage}
-        onChange={handleChange}
-        className={styles.input}
-        min="0"
-      />
-
-      <Button variant="secondary" onClick={handleReset}>Reset</Button>
-
+      {/* Reset */}
+      <div className={styles.actions}>
+        <Button variant="secondary" onClick={handleReset}>Reset</Button>
+      </div>
     </div>
   );
 }
