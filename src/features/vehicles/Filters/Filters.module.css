@@ -3,7 +3,10 @@
     flex-wrap: wrap;
     align-items: flex-end;
     gap: 20px;
-    margin-bottom: 24px;
+    
+    margin: 84px auto 24px;
+    width: 924px;
+
 }
 
 .group {
@@ -11,7 +14,6 @@
     flex-direction: column;
     gap: 6px;
     flex: 1;
-    min-width: 180px;
 }
 
 .label {
@@ -29,7 +31,7 @@
     appearance: none;
     padding: 10px 14px;
     border: 1px solid #ccc;
-    border-radius: 999px;
+    border-radius: 12px;
     /* капсульна форма */
     font-size: 14px;
     width: 100%;
@@ -54,7 +56,7 @@
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
-    border-radius: 999px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
@@ -67,9 +69,12 @@
 }
 
 .divider {
+
     color: #999;
     font-size: 14px;
     padding: 0 8px;
+   
+
 }
 
 .actions {

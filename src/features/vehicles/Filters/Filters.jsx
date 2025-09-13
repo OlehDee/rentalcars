@@ -1,22 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Filters.module.css';
 import Button from '../../../components/Button/Button';
 
-export default function Filters({ brands, filters, onChange }) {
+export default function Filters({ brands, onChange }) {
+  // локальний стан для полів
+  const [localFilters, setLocalFilters] = useState({
+    brand: '',
+    rentalPrice: '',
+    minMileage: '',
+    maxMileage: '',
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     const numericFields = ['minMileage', 'maxMileage'];
-    const next = {
-      ...filters,
+    setLocalFilters((prev) => ({
+      ...prev,
       [name]: numericFields.includes(name)
         ? (value === '' ? '' : Number(value))
         : value,
-    };
-    onChange(next);
+    }));
   };
 
-  const handleReset = () => {
-    onChange({ brand: '', rentalPrice: '', minMileage: '', maxMileage: '' });
+  const handleSearch = () => {
+    // передаємо наверх дані
+    onChange(localFilters);
+
+    // скидаємо поля після пошуку
+    setLocalFilters({
+      brand: '',
+      rentalPrice: '',
+      minMileage: '',
+      maxMileage: '',
+    });
   };
 
   return (
@@ -27,7 +43,7 @@ export default function Filters({ brands, filters, onChange }) {
         <div className={styles.selectWrap}>
           <select
             name="brand"
-            value={filters.brand}
+            value={localFilters.brand}
             onChange={handleChange}
             className={styles.select}
           >
@@ -48,7 +64,7 @@ export default function Filters({ brands, filters, onChange }) {
         <div className={styles.selectWrap}>
           <select
             name="rentalPrice"
-            value={filters.rentalPrice}
+            value={localFilters.rentalPrice}
             onChange={handleChange}
             className={styles.select}
           >
@@ -69,7 +85,7 @@ export default function Filters({ brands, filters, onChange }) {
             type="number"
             name="minMileage"
             placeholder="From"
-            value={filters.minMileage}
+            value={localFilters.minMileage}
             onChange={handleChange}
             className={styles.rangeInput}
             min="0"
@@ -79,7 +95,7 @@ export default function Filters({ brands, filters, onChange }) {
             type="number"
             name="maxMileage"
             placeholder="To"
-            value={filters.maxMileage}
+            value={localFilters.maxMileage}
             onChange={handleChange}
             className={styles.rangeInput}
             min="0"
@@ -87,9 +103,9 @@ export default function Filters({ brands, filters, onChange }) {
         </div>
       </div>
 
-      {/* Reset */}
+      {/* Only Search button */}
       <div className={styles.actions}>
-        <Button variant="secondary" onClick={handleReset}>Reset</Button>
+        <Button variant="primary" onClick={handleSearch}>Search</Button>
       </div>
     </div>
   );
