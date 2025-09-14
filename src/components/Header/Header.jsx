@@ -7,7 +7,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.inner}>
-          {/* Логотип */}
+        
           <div className={styles.logo}>
             <Link to="/" className={styles.logoLink}>
               <span className={styles.logoRental}>Rental</span>
@@ -15,7 +15,7 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Навігація */}
+          
           <nav className={styles.nav}>
             <NavLink
               to="/"

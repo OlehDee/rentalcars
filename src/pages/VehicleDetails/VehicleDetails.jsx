@@ -44,7 +44,6 @@ export default function VehicleDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // тут може бути реальний POST на бекенд
     alert(`Successfully booked ${currentCar.brand} ${currentCar.model} on ${rentalForm.date || 'selected date'}!`);
     setRentalForm({ name: '', email: '', date: '', comment: '' });
   };
@@ -131,7 +130,7 @@ export default function VehicleDetails() {
 
       {/* Права колонка */}
       <div className={styles.right}>
-        {/* Верхній блок з назвою, роком і Id праворуч */}
+        {/* Верхній блок з назвою, роком і Id*/}
         <div className={styles.headerRow}>
          <div className={styles.titleWrap}> 
           <h2 className={styles.title}>

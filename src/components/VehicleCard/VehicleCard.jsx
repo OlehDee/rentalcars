@@ -16,7 +16,7 @@ export default function VehicleCard({ car }) {
     else dispatch(addFavorite(car));
   };
 
-  // Дістаємо місто та країну з адреси (останні 2 частини)
+  // Дістаємо місто та країну з адреси 
   let city = '', country = '';
   if (car.address) {
     const parts = car.address.split(',').map(s => s.trim());
@@ -27,7 +27,6 @@ export default function VehicleCard({ car }) {
 
   return (
     <div className={styles.card}>
-      {/* Сердечко */}
       <button
         type="button"
         className={styles.favorite}
@@ -41,10 +40,10 @@ export default function VehicleCard({ car }) {
         )}
       </button>
 
-      {/* Фото */}
+  
       <img src={car.img} alt={car.model} className={styles.image} />
 
-      {/* Текстова частина */}
+      
       <div className={styles.body}>
         <div className={styles.headerRow}>
           <h3 className={styles.title}>

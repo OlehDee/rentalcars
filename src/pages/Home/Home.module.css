@@ -1,17 +1,15 @@
 .home {
     min-height: 700px;
-    /* як у макеті */
     background: url('../../assets/Picture.png') center/cover no-repeat;
     position: relative;
     color: #fff;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Контент позиціонуємо точно */
+
 .content {
     position: absolute;
     top: 436px;
-    /* відстань від верху (з урахуванням хедера) */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -19,11 +17,10 @@
 
 .title {
     
-            font-family: var(--font-family);
-            font-weight: 700;
-            font-size: 60px;
-            /* або 120px, якщо саме такий у макеті */
-            line-height: 120%;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 120%;
         
 }
 

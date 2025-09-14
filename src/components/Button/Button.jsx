@@ -12,7 +12,6 @@ export default function Button({
   style = {},
 }) {
   if (to) {
-    // Якщо є to → рендеримо як Link
     return (
       <Link
         to={to}
@@ -24,7 +23,6 @@ export default function Button({
     );
   }
 
-  // Якщо немає to → рендеримо як button
   return (
     <button
       type={type}

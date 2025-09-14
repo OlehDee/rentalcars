@@ -19,7 +19,6 @@
 .label {
     font-size: 13px;
     color: #6b7280;
-    /* сірий */
     font-weight: 500;
 }
 
@@ -32,7 +31,6 @@
     padding: 10px 14px;
     border: 1px solid #ccc;
     border-radius: 12px;
-    /* капсульна форма */
     font-size: 14px;
     width: 100%;
     background: #fff;

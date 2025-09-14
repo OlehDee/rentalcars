@@ -1,8 +1,6 @@
-// src/api/vehicles.js
+
 import api from './axios';
 
-// Нормалізуємо параметри згідно зі Swagger:
-// brand, rentalPrice (string), minMileage, maxMileage, page, limit
 const normalizeParams = (params = {}) => {
   const {
     brand = '',

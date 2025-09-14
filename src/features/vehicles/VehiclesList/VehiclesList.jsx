@@ -1,4 +1,4 @@
-// src/features/vehicles/VehiclesList/VehiclesList.jsx
+
 import React from 'react';
 import VehicleCard from '../../../components/VehicleCard/VehicleCard';
 import styles from './VehiclesList.module.css';

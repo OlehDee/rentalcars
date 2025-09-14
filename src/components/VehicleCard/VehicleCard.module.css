@@ -4,7 +4,6 @@
     flex-direction: column;
     border-radius: 12px;
     overflow: hidden;
-    /* щоб фото та сердечко лягали всередину */
     background: #fff;
     
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
@@ -14,12 +13,11 @@
 .image {
     width: 100%;
     height: 260px;
-    /* підлаштуй за потреби */
     object-fit: cover;
     display: block;
 }
 
-/* Кнопка-лайк */
+
 .favorite {
     position: absolute;
     top: 12px;
@@ -53,16 +51,11 @@
     color: #3470FF;
 }
 
-/* Текстова частина */
+
 .body {
-    
-   
     display: flex;
-        /* додаємо флекс */
         flex-direction: column;
-        /* вертикально */
         flex: 1;
-        /* розтягуємось на всю висоту */
 }
 
 .headerRow {
@@ -102,13 +95,11 @@
     white-space: nowrap;
 }
 
-/* Рядки з метаданими */
 .metaRow {
     display: flex;
     align-items: center;
     gap: 12px;
     color: #9ca3af;
-    /* сірий */
     font-size: 12px;
     margin-top: 8px;
     flex-wrap: wrap;
@@ -127,7 +118,6 @@
     background: #d1d5db;
 }
 
-/* Кнопка Read more — велика капсула */
 .cta {
     margin-top: auto;
     
@@ -141,7 +131,6 @@
     border-radius: 12px;
 }
 
-/* Адаптивність */
 @media (max-width: 480px) {
     .image {
         height: 220px;

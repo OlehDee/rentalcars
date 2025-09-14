@@ -1,4 +1,4 @@
-// src/pages/Catalog.jsx
+
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -33,7 +33,6 @@ export default function Catalog() {
     dispatch(fetchBrands());
   }, [dispatch]);
 
-  // Кожна зміна фільтрів → новий запит з page=1
   useEffect(() => {
     dispatch(resetVehicles());
     setReachedEnd(false);

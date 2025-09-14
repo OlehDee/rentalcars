@@ -1,6 +1,5 @@
 .banner {
     background-image: url('../images/Picture.png');
-    /* шлях відносно цього файлу */
     background-size: cover;
     background-position: center;
     height: 400px;

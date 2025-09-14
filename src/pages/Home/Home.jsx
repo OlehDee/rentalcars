@@ -3,7 +3,6 @@ import styles from './Home.module.css';
 import Button from '../../components/Button/Button';
 import '../../main.css';
 
-
 export default function Home() {
   return (
     <section className={styles.home}>

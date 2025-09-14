@@ -1,11 +1,8 @@
-/* фон секції за бажанням */
+
 .wrap {
     padding: 20px 0;
 }
 
-.catalogPage {
-    /* Контент усередині контейнера */
-}
 
 .title {
     font-size: 24px;
@@ -24,14 +21,14 @@
     color: #555;
 }
 
-/* центр кнопки */
+
 .actions {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-/* повідомлення про кінець списку */
+
 .endMessage {
     margin-top: 20px;
     text-align: center;
