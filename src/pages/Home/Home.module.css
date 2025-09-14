@@ -1,54 +1,34 @@
 .home {
-    height: 100vh;
-    /* повна висота екрану */
+    min-height: 700px;
+    /* як у макеті */
+    background: url('../../assets/Picture.png') center/cover no-repeat;
     position: relative;
-        /* щоб позиціонувати дочірній блок */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    background-image: url('../../assets/Picture.png');
-    /* шлях відносно Home.module.css */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
     color: #fff;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* Контент позиціонуємо точно */
 .content {
     position: absolute;
-    bottom: 60px;
-    /* 60px від низу */
+    top: 436px;
+    /* відстань від верху (з урахуванням хедера) */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
 }
+
 .title {
-    font-size:60px;
-        text-align: center;
-        color: var(--white);
+    
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 60px;
+            /* або 120px, якщо саме такий у макеті */
+            line-height: 120%;
+        
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #555;
-}
-
-.link {
-    display: inline-block;
-    padding: 12px 24px;
-    background: #3470FF;
+    font: 400 20px/150% var(--font-family);
+    margin: 0 0 30px;
     color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background 0.2s ease;
-}
-
-.link:hover {
-    background: #0056b3;
 }

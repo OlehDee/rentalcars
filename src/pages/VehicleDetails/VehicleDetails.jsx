@@ -133,10 +133,12 @@ export default function VehicleDetails() {
       <div className={styles.right}>
         {/* Верхній блок з назвою, роком і Id праворуч */}
         <div className={styles.headerRow}>
+         <div className={styles.titleWrap}> 
           <h2 className={styles.title}>
             {currentCar.brand} {currentCar.model}, {currentCar.year}
           </h2>
           <div className={styles.carId}>Id: {currentCar.id}</div>
+          </div>
         </div>
 
         {/* Рядок: ліворуч локація, праворуч пробіг */}
@@ -154,6 +156,16 @@ export default function VehicleDetails() {
             ${currentCar.rentalPrice} 
           </span>
         </div>
+
+        <div className={styles.description}>
+          <span className={styles.description}>
+            {currentCar.description} 
+          </span>
+        </div>
+
+
+        
+        <div className={styles.bottomSection}>
 
         {/* Rental Conditions */}
         <div className={styles.section}>
@@ -197,6 +209,7 @@ export default function VehicleDetails() {
             ))}
           </ul>
         </div>
+      </div>
       </div>
     </div>
   );
